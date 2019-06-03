@@ -8,18 +8,31 @@
             {% bootstrap_css %}
         {% endblock %}
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Exo+2|Roboto&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="container">
+
             <section>
-                <nav class="navbar nav">
+                <nav class="navbar nav my-3">
                     <ul>
-                        <li>ELP</li>
+                        <li class='exo-font'><h3>ELP</h3></li>
                     </ul>
                 </nav>
             </section>
-            <h1>Welcome to the E-Learning Platform</h1>
+
+            <section class="text-center intro-body">
+                <h1>Welcome to the E-Learning Platform</h1>
+
+                <h3 class='container'>Student and Instructor Interaction made simple</h3>
+
+                <button class='btn btn-success mx-auto'>Login</button>
+                <small>Not registered? <a href="#">Register Here</a></small>
+            </section>
+            
         </div>
-        
+        {% block scripts %}
+            {% bootstrap_javascript %}
+        {% endblock %}
     </body>
 </html>
