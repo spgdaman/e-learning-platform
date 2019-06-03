@@ -12,3 +12,7 @@ class Course(models.Model):
     course_name = models.CharField(max_length=40)
     course_description = models.CharField(max_length=150)
 
+class Assignment(models.Model):
+    name = models.CharField(max_length=40)
+    # assignment = models.ImageField()
+    link = models.URLField()
