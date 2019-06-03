@@ -1,5 +1,6 @@
 virtual/
 migrations/
 __pycache__/
+*.pyc
 .vscode
 db.sqlite3
