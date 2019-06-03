@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'elp',
     'app',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
