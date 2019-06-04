@@ -12,6 +12,9 @@ class Course(models.Model):
     course_name = models.CharField(max_length=40)
     course_description = models.CharField(max_length=150)
 
+    # Relationships and Foreign Keys
+    assignment_id=models.ManyToManyField('Assignment')
+
 class Assignment(models.Model):
     name = models.CharField(max_length=40)
     # assignment = models.ImageField()
