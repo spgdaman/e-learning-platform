@@ -9,6 +9,8 @@ class Profile(models.Model):
 
     # Relationships and Foreign Keys
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    assignment = models.ManyToManyField('Assignment')
+    course = models.ManyToManyField('Course')
 
 class Course(models.Model):
     course_name = models.CharField(max_length=40)
