@@ -20,3 +20,7 @@ def update_profile(request):
     else:
         form = ProfileForm()
     return render(request,'profileupdate.html',{'form':form})
+
+def profile(request):
+    profile = Profile.objects.all()
+    return render(request,'profile.html',{"profile":profile})

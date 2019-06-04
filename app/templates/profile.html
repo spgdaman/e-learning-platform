@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for profile in profile %}
+            <div class="card mx-auto my-3">
+                <div class="card-header">
+                    <img src="{{profile.profile_pic.url}}" alt="">
+                </div>
+                <div class="card-body">
+                    <p>{{profile.username}}</p>
+                    <p>{{profile.email}}</p>
+                    <p>{{profile.mobile_no}}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

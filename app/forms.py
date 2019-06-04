@@ -4,7 +4,7 @@ from .models import Profile,Course,Assignment
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ('username', 'email', 'mobile_no',)
+        fields = ('profile_pic', 'username', 'email', 'mobile_no',)
 
 class CourseForm(forms.ModelForm):
     class Meta:
