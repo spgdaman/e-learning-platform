@@ -1,24 +1,11 @@
+{% extends 'base.html' %}
 {% load bootstrap4 %}
-{% load static %}
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Welcome to ELP</title>
-        {% block styles %}
-            {% bootstrap_css %}
-        {% endblock %}
-        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-        <link href="https://fonts.googleapis.com/css?family=Exo+2|Roboto&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        
-  
-        
-        <div class="container">
 
-        </div>
-        {% block scripts %}
-            {% bootstrap_javascript %}
-        {% endblock %}
-    </body>
-</html>
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h1>I am the index page</h1>
+        
+    </div>
+</div>
+{% endblock %}

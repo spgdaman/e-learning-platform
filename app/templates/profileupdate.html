@@ -4,14 +4,15 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="card">
+        <div class="card mx-auto my-3">
             <div class="card-header">
                 <h3>Profile Update</h3>
             </div>
-            <div>
-                <form action="{% url 'update_profile' %}">
+            <div class="card-body">
+                <form action="{% url 'update_profile' %}" method="POST">
                     {% csrf_token %}
                     {% bootstrap_form form %}
+                    <button type="submit" class="btn btn-primary">Update</button>
                 </form>
             </div>
         </div>

@@ -1,17 +1,17 @@
-from django.forms import forms
+from django import forms
 from .models import Profile,Course,Assignment
 
-class ProfileForm(forms.Form):
-    class meta:
+class ProfileForm(forms.ModelForm):
+    class Meta:
         model = Profile
-        fields = ('username', 'email', 'mobile_no')
+        fields = ('username', 'email', 'mobile_no',)
 
-class CourseForm(forms.Form):
-    class meta:
+class CourseForm(forms.ModelForm):
+    class Meta:
         model = Course
-        fields = ('course_name', 'course_description')
+        fields = ('course_name', 'course_description',)
 
-class AssignmentForm(forms.Form):
-    class meta:
+class AssignmentForm(forms.ModelForm):
+    class Meta:
         model = Assignment
-        fields = ('name', 'link')
+        fields = ('name', 'link',)
