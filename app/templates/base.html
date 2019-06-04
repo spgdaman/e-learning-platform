@@ -1,0 +1,22 @@
+{% load bootstrap4 %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ELP</title>
+        {% block style %}
+            {% bootstrap_css %}
+        {% endblock %}
+    </head>
+    <body>
+        {% include 'navbar.html' %}
+
+        {% block content %}
+
+        {% endblock %}
+
+        {% block script %}
+            {% bootstrap_javascript %}
+        {% endblock %}
+    </body>
+</html>
