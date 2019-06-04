@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Profile,Course,Assignment
 from .forms import ProfileForm,CourseForm,AssignmentForm
 
@@ -24,3 +24,16 @@ def update_profile(request):
 def profile(request):
     profile = Profile.objects.all()
     return render(request,'profile.html',{"profile":profile})
+
+def enroll_course(request):
+    current_user = request.user.profile
+    if request.method == 'POST':
+        form = CourseForm(request.POST, request.FILES)
+        if form.is_valid():
+            course = form.save(commit=False)
+            course.profile = current_user
+            course.save()
+            return redirect('index')
+    else:
+        form = CourseForm()
+    return render(request,'enrollcourse.html',{'form':form})
