@@ -16,7 +16,7 @@ def update_profile(request):
             profile = form.save(commit=False)
             profile.user = current_user
             profile.save()
-            return redirect('home')
+            return redirect('index')
     else:
         form = ProfileForm()
     return render(request,'profileupdate.html',{'form':form})
