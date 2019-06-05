@@ -3,13 +3,13 @@ from .models import Profile,Course,Assignment
 from .forms import ProfileForm,CourseForm,AssignmentForm
 
 def intro(request):
+    return render(request,'intro.html')
+
+def index(request):
     assignments = Assignment.objects.all()
     courses = Course.objects.all()
     profiles = Profile.objects.all()
-    return render(request,'intro.html',{"assignments":assignments,"courses":courses,"profiles":profiles})
-
-def index(request):
-    return render(request,'index.html')
+    return render(request,'index.html', {"assignments":assignments,"courses":courses,"profiles":profiles})
 
 def update_profile(request):
     current_user = request.user

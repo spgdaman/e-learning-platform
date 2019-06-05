@@ -4,12 +4,24 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <h1>I am the index page</h1>
         {% for profile in profiles %}
             {% if user.id == profile.user.id %}
-                <p>{{profile.assignment.name}}</p>
-                <p>{{profile.course.course_name}}</p>
+                {% for assignment in assignments %}
+                    
+                        <div class="card my-3">
+                            <div class="card-header">
+                               <h5>{{assignment.name}}</h5>
+                            </div>
+                            <div class="card-body">
+                                <p>Link: {{assignment.link}}</p>
+                                <p>Submitted at: {{assignment.submitted_at}}</p>
+                                <a class="btn btn-primary" href="..{{assignment.assignment.url}}" download="{{assignment.name}}">Download</a>
+                            </div>
+                        </div>
+                                     
+                {% endfor %}
             {% endif %}
+            
         {% endfor %}
     </div>
 </div>
