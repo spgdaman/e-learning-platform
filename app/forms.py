@@ -4,7 +4,7 @@ from .models import Profile,Course,Assignment
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        exclude = ['assignment', 'user']
+        exclude = ['assignment', 'user', 'course']
 
 class CourseForm(forms.ModelForm):
     class Meta:
@@ -14,4 +14,4 @@ class CourseForm(forms.ModelForm):
 class AssignmentForm(forms.ModelForm):
     class Meta:
         model = Assignment
-        exclude = ['submitted_at',]
+        exclude = []

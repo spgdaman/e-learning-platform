@@ -20,7 +20,7 @@ class Course(models.Model):
 
 class Assignment(models.Model):
     name = models.CharField(max_length=40)
-    assignment = models.FileField()
+    assignment = models.FileField(upload_to='assignments/')
     link = models.URLField()
     submitted_at = models.DateTimeField(auto_now_add=True)
     
