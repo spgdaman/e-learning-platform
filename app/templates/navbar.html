@@ -1,10 +1,19 @@
-<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+<nav class="navbar bg-dark">
     <div class="container">
-        <a class="navbar-brand exo-font" href="#">ELP <span class="sr-only">(current)</span></a>
+        <a class="navbar-brand exo-font" href="#" style="color: white;">ELP <span class="sr-only">(current)</span></a>
         {% if user.is_authenticated %}
-        <ul class="navbar-nav mr-auto">
-            <!-- <a href="#">My Profile</a> -->
-        </ul>
+            {% for profile in profiles %}
+                {% if profile.id == user.id %}
+                
+                <ul class="navbar-nav ml-auto">
+                    <div class="nav-item dropdown mx-0 px4">
+                        <img src="{{profile.profile_pic.url}}" alt="profile pic" style="border-radius: 50%; width 25px; height:25px;">
+                        <a href="{% url 'profile' profile.id %}"  style="color: white;">My Profile</a>
+                    </div>
+                    
+                </ul>
+                {% endif %}
+            {% endfor %}
         {% endif %}
     </div>
 </nav>
