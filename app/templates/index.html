@@ -5,7 +5,12 @@
 <div class="container">
     <div class="row">
         <h1>I am the index page</h1>
-        
+        {% for profile in profiles %}
+            {% if user.id == profile.user.id %}
+                <p>{{profile.assignment.name}}</p>
+                <p>{{profile.course.course_name}}</p>
+            {% endif %}
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

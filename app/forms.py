@@ -14,4 +14,4 @@ class CourseForm(forms.ModelForm):
 class AssignmentForm(forms.ModelForm):
     class Meta:
         model = Assignment
-        exclude = []
+        exclude = ['submitted_at',]

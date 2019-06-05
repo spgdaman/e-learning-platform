@@ -3,7 +3,10 @@ from .models import Profile,Course,Assignment
 from .forms import ProfileForm,CourseForm,AssignmentForm
 
 def intro(request):
-    return render(request,'intro.html')
+    assignments = Assignment.objects.all()
+    courses = Course.objects.all()
+    profiles = Profile.objects.all()
+    return render(request,'intro.html',{"assignments":assignments,"courses":courses,"profiles":profiles})
 
 def index(request):
     return render(request,'index.html')
@@ -39,12 +42,10 @@ def enroll_course(request):
     return render(request,'enrollcourse.html',{'form':form})
 
 def submit_assignment(request):
-    current_user = request.user
     if request.method == 'POST':
         form = AssignmentForm(request.POST, request.FILES)
         if form.is_valid():
             assignment = form.save(commit=False)
-            assignment.profile = current_user
             assignment.save()
             return redirect(index)
     else:

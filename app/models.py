@@ -9,7 +9,6 @@ class Profile(models.Model):
 
     # Relationships and Foreign Keys
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    assignment = models.ManyToManyField('Assignment')
     course = models.ManyToManyField('Course')
 
 class Course(models.Model):
@@ -21,5 +20,8 @@ class Course(models.Model):
 
 class Assignment(models.Model):
     name = models.CharField(max_length=40)
-    # assignment = models.ImageField()
+    assignment = models.FileField()
     link = models.URLField()
+    submitted_at = models.DateTimeField(auto_now_add=True)
+    
+    profile = models.ManyToManyField('Profile')
