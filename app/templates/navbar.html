@@ -1,8 +1,10 @@
 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
     <div class="container">
         <a class="navbar-brand exo-font" href="#">ELP <span class="sr-only">(current)</span></a>
+        {% if user.is_authenticated %}
         <ul class="navbar-nav mr-auto">
-    
+            <!-- <a href="#">My Profile</a> -->
         </ul>
+        {% endif %}
     </div>
 </nav>

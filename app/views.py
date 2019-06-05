@@ -21,8 +21,8 @@ def update_profile(request):
         form = ProfileForm()
     return render(request,'profileupdate.html',{'form':form})
 
-def profile(request):
-    profile = Profile.objects.all()
+def profile(request,profile_id):
+    profile = Profile.objects.filter(id=profile_id)
     return render(request,'profile.html',{"profile":profile})
 
 def enroll_course(request):
@@ -39,4 +39,14 @@ def enroll_course(request):
     return render(request,'enrollcourse.html',{'form':form})
 
 def submit_assignment(request):
-    pass
+    current_user = request.user
+    if request.method == 'POST':
+        form = AssignmentForm(request.POST, request.FILES)
+        if form.is_valid():
+            assignment = form.save(commit=False)
+            assignment.profile = current_user
+            assignment.save()
+            return redirect(index)
+    else:
+        form = AssignmentForm()
+    return render(request,'submitassignment.html',{"form":form})
