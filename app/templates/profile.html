@@ -2,19 +2,26 @@
 
 {% block content %}
 <div class="container">
+    {% if user.is_authenticated %}
     <div class="row">
         {% for profile in profile %}
+            {% if profile.user.id == user.id %}
             <div class="card mx-auto my-3">
                 <div class="card-header">
-                    <img src="{{profile.profile_pic.url}}" alt="">
+                    <div class="row">
+                        <img src="{{profile.profile_pic.url}}" alt="" style="border-radius: 50%; width: 35px; height: 35px;">
+                        <p>{{profile.username}}</p>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <p>{{profile.username}}</p>
+                    <h5>Details</h5>
                     <p>{{profile.email}}</p>
                     <p>{{profile.mobile_no}}</p>
                 </div>
             </div>
+            {% endif %}
         {% endfor %}
-    </div>
+    </div> 
+    {% endif %}
 </div>
 {% endblock %}

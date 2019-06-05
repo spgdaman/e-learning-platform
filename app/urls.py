@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^profile/update/$', views.update_profile, name='update_profile'),
     url(r'^profile/$', views.profile, name='profile'),
     url(r'^enroll/course/$', views.enroll_course, name='enroll_course'),
+    url(r'submit/assignment/$', views.submit_assignment, name="submit_assignment"),
 ]
 
 if settings.DEBUG:

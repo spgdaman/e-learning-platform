@@ -4,14 +4,14 @@ from .models import Profile,Course,Assignment
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ('profile_pic', 'username', 'email', 'mobile_no',)
+        exclude = ['assignment', 'user']
 
 class CourseForm(forms.ModelForm):
     class Meta:
         model = Course
-        fields = ('course_name', 'course_description',)
+        exclude = []
 
 class AssignmentForm(forms.ModelForm):
     class Meta:
         model = Assignment
-        fields = ('name', 'link',)
+        exclude = []

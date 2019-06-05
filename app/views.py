@@ -37,3 +37,6 @@ def enroll_course(request):
     else:
         form = CourseForm()
     return render(request,'enrollcourse.html',{'form':form})
+
+def submit_assignment(request):
+    pass
