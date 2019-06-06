@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^profile/(\d+)', views.profile, name='profile'),
     url(r'^enroll/course/$', views.enroll_course, name='enroll_course'),
     url(r'^submit/assignment/$', views.submit_assignment, name="submit_assignment"),
+    # url(r'^signup/$', views.signup, name="signup"),
 ]
 
 if settings.DEBUG:
