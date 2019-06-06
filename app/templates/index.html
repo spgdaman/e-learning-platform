@@ -7,18 +7,18 @@
         {% for profile in profiles %}
             {% if user.id == profile.user.id %}
                 {% for assignment in assignments %}
-                    
-                        <div class="card my-3 mx-1">
+                    <div class="col-sm-12 col-md-3">
+                        <div class="card my-3">
                             <div class="card-header">
-                               <h5>{{assignment.name}}</h5>
+                                <h5>{{assignment.name}}</h5>
                             </div>
                             <div class="card-body">
-                                <p>Link: {{assignment.link}}</p>
-                                <p>Submitted at: {{assignment.submitted_at}}</p>
+                                <p><strong>Link:</strong> {{assignment.link}}</p>
+                                <p><strong>Submitted at:</strong> {{assignment.submitted_at}}</p>
                                 <a class="btn btn-primary" href="..{{assignment.assignment.url}}" download="{{assignment.name}}">Download</a>
                             </div>
                         </div>
-                                     
+                    </div>                                     
                 {% endfor %}
             {% endif %}
             
