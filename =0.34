@@ -1,0 +1,10 @@
+Collecting WeasyPrint
+  Downloading https://files.pythonhosted.org/packages/89/05/4eb7b5135bf94465a61b6ddfa6e84526cdc1b15385a3bed7aa86b5bda621/WeasyPrint-44.tar.gz (315kB)
+    Complete output from command python setup.py egg_info:
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+      File "/tmp/pip-build-UFBNlH/WeasyPrint/setup.py", line 20, in <module>
+        'WeasyPrint does not support Python 2.x anymore. '
+    RuntimeError: WeasyPrint does not support Python 2.x anymore. Please use Python 3 or install an older version of WeasyPrint.
+    
+    ----------------------------------------

@@ -32,7 +32,7 @@ class Assignment(models.Model):
     
     # Relationships and Foreign Keys
     course = models.ManyToManyField('Course')
-    profile = models.ForeignKey('Profile')
+    profile = models.ForeignKey('Profile', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
