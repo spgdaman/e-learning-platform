@@ -1,0 +1,28 @@
+{% load bootstrap4 %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ELP</title>
+        {% block style %}
+            {% bootstrap_css %}
+        {% endblock %}
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Exo+2|Roboto&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar bg-dark">
+            <div class="container">
+                <a class="navbar-brand exo-font" href="{% url 'index' %}" style="color: white;">ELP <span class="sr-only">(current)</span></a>
+            </div>
+        </nav>
+
+        {% block content %}
+
+        {% endblock %}
+
+        {% block script %}
+            {% bootstrap_javascript %}
+        {% endblock %}
+    </body>
+</html>
