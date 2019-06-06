@@ -11,12 +11,18 @@ class Profile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     course = models.ManyToManyField('Course')
 
+    def __str__(self):
+        return self.username
+
 class Course(models.Model):
     course_name = models.CharField(max_length=40)
     course_description = models.CharField(max_length=150)
 
-    # Relationships and Foreign Keys
-    assignment=models.ManyToManyField('Assignment')
+    def __str__(self):
+        return self.course_name
+
+    class Meta:
+        ordering = ['course_name']
 
 class Assignment(models.Model):
     name = models.CharField(max_length=40)
@@ -24,4 +30,12 @@ class Assignment(models.Model):
     link = models.URLField()
     submitted_at = models.DateTimeField(auto_now_add=True)
     
+    # Relationships and Foreign Keys
+    course = models.ManyToManyField('Course')
     profile = models.ManyToManyField('Profile')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ['submitted_at']

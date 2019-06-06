@@ -29,12 +29,13 @@ def profile(request,profile_id):
     return render(request,'profile.html',{"profile":profile})
 
 def enroll_course(request):
-    current_user = request.user.profile
+    user = request.user
+    current_profile = Profile.objects.filter(id=user.id)
     if request.method == 'POST':
         form = CourseForm(request.POST, request.FILES)
         if form.is_valid():
             course = form.save(commit=False)
-            course.profile = current_user
+            course.profile = current_profile
             course.save()
             return redirect('index')
     else:

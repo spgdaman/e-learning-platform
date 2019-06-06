@@ -3,7 +3,8 @@
 
 {% block content %}
 <div class="container">
-    <div class="row">
+    <h1 class="text-center my-1">Assignments</h1>
+    <div class="row robo-font">
         {% for profile in profiles %}
             {% if user.id == profile.user.id %}
                 {% for assignment in assignments %}

@@ -1,6 +1,6 @@
 <nav class="navbar bg-dark">
     <div class="container">
-        <a class="navbar-brand exo-font" href="#" style="color: white;">ELP <span class="sr-only">(current)</span></a>
+        <a class="navbar-brand exo-font" href="{% url 'index' %}" style="color: white;">ELP <span class="sr-only">(current)</span></a>
         {% if user.is_authenticated %}
             {% for profile in profiles %}
                 {% if profile.id == user.id %}
@@ -10,8 +10,7 @@
                         <a href="{% url 'submit_assignment' %}" style="color: white;">Submit Assignment</a>
                         <img src="{{profile.profile_pic.url}}" alt="profile pic" style="border-radius: 50%; width 25px; height:25px;">
                         <a href="{% url 'profile' profile.id %}"  style="color: white;">My Profile</a>
-                    </div>
-                    
+                    </div> 
                 </ul>
                 {% endif %}
             {% endfor %}
