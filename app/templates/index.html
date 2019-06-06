@@ -5,23 +5,20 @@
 <div class="container">
     <h1 class="text-center my-1">Assignments</h1>
     <div class="row robo-font">
-        {% for profile in profiles %}
-            {% if user.id == profile.user.id %}
-                {% for assignment in assignments %}
-                    <div class="col-sm-12 col-md-3">
-                        <div class="card my-3">
-                            <div class="card-header">
-                                <h5>{{assignment.name}}</h5>
-                            </div>
-                            <div class="card-body">
-                                <p><strong>Link:</strong> {{assignment.link}}</p>
-                                <p><strong>Submitted at:</strong> {{assignment.submitted_at}}</p>
-                                <a class="btn btn-primary" href="..{{assignment.assignment.url}}" download="{{assignment.name}}">Download</a>
-                            </div>
+        {% for assignment in assignments %}
+            
+                <div class="col-sm-12 col-md-3">
+                    <div class="card my-3">
+                        <div class="card-header">
+                            <h5>{{assignment.name}}</h5>
                         </div>
-                    </div>                                     
-                {% endfor %}
-            {% endif %}
+                        <div class="card-body">
+                            <p><strong>Link:</strong> {{assignment.link}}</p>
+                            <p><strong>Submitted at:</strong> {{assignment.submitted_at}}</p>
+                            <a class="btn btn-primary" href="..{{assignment.assignment.url}}" download="{{assignment.name}}">Download</a>
+                        </div>
+                    </div>
+                </div>                                     
             
         {% endfor %}
     </div>

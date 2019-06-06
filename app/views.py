@@ -8,7 +8,7 @@ def intro(request):
     return render(request,'intro.html')
 
 def index(request):
-    assignments = Assignment.objects.all()
+    assignments = Assignment.objects.all().order_by('-submitted_at')
     courses = Course.objects.all()
     profiles = Profile.objects.all()
     return render(request,'index.html', {"assignments":assignments,"courses":courses,"profiles":profiles})
