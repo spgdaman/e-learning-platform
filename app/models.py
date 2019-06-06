@@ -8,7 +8,7 @@ class Profile(models.Model):
     mobile_no = models.CharField(max_length=15)
 
     # Relationships and Foreign Keys
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     course = models.ManyToManyField('Course')
 
     def __str__(self):

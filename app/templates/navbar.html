@@ -3,7 +3,7 @@
         <a class="navbar-brand exo-font" href="{% url 'index' %}" style="color: white;">ELP <span class="sr-only">(current)</span></a>
         {% if user.is_authenticated %}
             {% for profile in profiles %}
-                {% if profile.id == user.id %}
+                {% if profile.user.id == user.id %}
                 
                 <ul class="navbar-nav ml-auto">
                     <div class="nav-item dropdown mx-0 px4">
