@@ -72,9 +72,4 @@ def signup(request):
 
 def pdf_view(request,id):
     pdf = Assignment.objects.filter(id=id)
-    assignment_url = pdf.assignment
-    try:
-        response = FileResponse(open(assingment_url, 'rb'), content_type='application/pdf')
-        return render(request, 'pdf_view.html', {"response":response})
-    except FileNotFoundError:
-        raise Http404()
+    return render(request, 'pdf/pdf_view.html', {"pdf":pdf})

@@ -1,5 +1,8 @@
-{% extend 'base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
-    {%response%}
+    {% for pdf in pdf %}
+    
+    <iframe src="..{{pdf.assignment.url}}" width="800px" height="600px" style="border: none;"/>
+    {% endfor %}
 {% endblock %}
