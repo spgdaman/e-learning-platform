@@ -4,23 +4,24 @@
 <div class="container">
     {% if user.is_authenticated %}
     <div class="row">
-        {% for profile in profile %}
-            {% if profile.user.id == user.id %}
+        
+            
             <div class="card mx-auto my-3">
                 <div class="card-header">
                     <div class="row">
-                        <img class="mx-2" src="{{profile.profile_pic.url}}" alt="" style="border-radius: 50%; width: 35px; height: 35px;">
-                        <p>{{profile.username}}</p>
+                        <img class="mx-2" src="{{user.profile.profile_pic.url}}" alt="" style="border-radius: 50%; width: 35px; height: 35px;">
+                        <p>{{user.profile.username}}</p>
                     </div>
                 </div>
                 <div class="card-body">
                     <h5>Details</h5>
-                    <p>{{profile.email}}</p>
-                    <p>{{profile.mobile_no}}</p>
+                    <p>{{user.profile.email}}</p>
+                    <p>{{user.profile.mobile_no}}</p>
+                    <a href="{% url 'update_profile' %}" class="btn btn-primary">Update Profile</a>
                 </div>
             </div>
-            {% endif %}
-        {% endfor %}
+            
+
     </div> 
     {% endif %}
 </div>
