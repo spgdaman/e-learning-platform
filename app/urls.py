@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^enroll/course/$', views.enroll_course, name='enroll_course'),
     url(r'^submit/assignment/$', views.submit_assignment, name="submit_assignment"),
     url(r'^signup/$', views.signup, name="signup"),
+    url(r'^pdf_view/(\d+)', views.pdf_view, name="pdf_view")
 ]
 
 if settings.DEBUG:

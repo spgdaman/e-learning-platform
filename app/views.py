@@ -3,6 +3,7 @@ from .models import Profile,Course,Assignment
 from .forms import ProfileForm,CourseForm,AssignmentForm
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
+from django.http import FileResponse,Http404
 
 def intro(request):
     return render(request,'intro.html')
@@ -68,3 +69,12 @@ def signup(request):
     else:
         form = UserCreationForm()
     return render(request, 'registration/signup.html', {'form': form})
+
+def pdf_view(request,id):
+    pdf = Assignment.objects.filter(id=id)
+    assignment_url = pdf.assignment
+    try:
+        response = FileResponse(open(assingment_url, 'rb'), content_type='application/pdf')
+        return render(request, 'pdf_view.html', {"response":response})
+    except FileNotFoundError:
+        raise Http404()
