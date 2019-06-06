@@ -10,7 +10,7 @@
                         <a href="{% url 'submit_assignment' %}" style="color: white;">Submit Assignment</a>
                         <img src="{{profile.profile_pic.url}}" alt="profile pic" style="border-radius: 50%; width 25px; height:25px;">
                         <a href="{% url 'profile' profile.id %}"  style="color: white;">My Profile</a>
-                        <a href="{% url 'logout' %}">Logout</a>
+                        <a href="{% url 'logout' %}" style="color: white;">Logout</a>
                     </div> 
                 </ul>
                 {% endif %}
