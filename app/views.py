@@ -87,3 +87,7 @@ def search_assignment(request):
     else:
         message="Please enter a correct search term"
         return render(request,"search.html")
+
+def assignment(request,assignment_id):
+    assignment = Assignment.objects.filter(id=assignment_id)
+    return render(request,'assignment.html',{"assignment":assignment})

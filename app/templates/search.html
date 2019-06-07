@@ -4,7 +4,7 @@
 <div class="container">
     {% for assignment in assignments %}
         <div class="row">
-            <p class="mx-auto my-3">{{assignment.name}}</p>
+            <h3 class="mx-auto my-3"><a href="{% url 'assignment' assignment.id %}">{{assignment.name}}</a></h3>
         </div>
     {% endfor %}
 </div>

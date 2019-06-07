@@ -14,6 +14,7 @@ urlpatterns = [
     url(r'^pdf_view/(\d+)', views.pdf_view, name="pdf_view"),
     url(r'^all_courses/$', views.all_courses, name="all_courses"),
     url(r'^search_assignment/$', views.search_assignment, name="search_assignment"),
+    url(r'^assignment/(\d+)', views.assignment, name="assignment")
 ]
 
 if settings.DEBUG:
