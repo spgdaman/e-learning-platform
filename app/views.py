@@ -77,3 +77,13 @@ def pdf_view(request,id):
 def all_courses(request):
     courses = Course.objects.all()
     return render(request,'allcourses.html',{"courses":courses})
+
+def search_assignment(request):
+    if 'assignments' in request.GET and request.GET['assignments']:
+        search_term = request.GET.get('assignments')
+        search_item = Assignment.objects.filter(name__icontains=search_term)
+        message=f"{{search_term}}"
+        return render(request,'search.html',{"message":message,"assignments":search_item})
+    else:
+        message="Please enter a correct search term"
+        return render(request,"search.html")

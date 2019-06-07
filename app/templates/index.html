@@ -5,12 +5,12 @@
 <div class="container">
     <h1 class="text-center my-1">Assignments</h1>
 
-    <!-- <div class="row text-center col-sm-12 col-md-4">
-        <form action="" method="POST" class="form-inline my-2">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search Assignments" aria-label="Search">
+    <div class="row text-center col-sm-12 col-md-4">
+        <form action="{% url 'search_assignment' %}" class="form-inline my-2">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search Assignments" aria-label="Search" name="assignments">
             <button class="btn btn-primary">Search</button>
         </form>
-    </div> -->
+    </div>
     
     <div class="row robo-font">
         {% for assignment in assignments %}
