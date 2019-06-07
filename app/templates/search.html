@@ -2,10 +2,18 @@
 
 {% block content %}
 <div class="container">
-    {% for assignment in assignments %}
-        <div class="row">
-            <h3 class="mx-auto my-3"><a href="{% url 'assignment' assignment.id %}">{{assignment.name}}</a></h3>
-        </div>
-    {% endfor %}
+    {% if assignment %}
+        {% for assignment in assignments %}
+            <div class="row">
+                <h3 class="mx-auto my-3"><a href="{% url 'assignment' assignment.id %}">{{assignment.name}}</a></h3>
+            </div>
+        {% endfor %}
+    {% else %}
+        {% for message in message %}
+            <div class="row">
+                <h3 class="mx-auto my-3">{{message}}</h3>
+            </div>
+        {% endfor %}
+    {% endif %}
 </div>
 {% endblock %}
