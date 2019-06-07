@@ -1,18 +1,16 @@
-# Awaards
+# E-Learning Platform
 
-An attempt to clone the popular Awaards application.
+To ease the process of submitting assignments for specific courses, and for the respective instructors to view them.
 
 ## Getting Started
 
-Clone or download the project using the [link](https://github.com/spgdaman/awaards.git) .
+Clone or download the project using the [link](https://github.com/spgdaman/e-learning-platform.git) .
 
 ### Dependencies
 * confusable-homoglyphs==3.2.0
 * Django==1.11
 * django-bootstrap4==0.0.8
 * django-registration==2.4.1
-* django-tinymce==2.8.0
-* djangorestframework==3.9.4
 * Pillow==6.0.0
 * psycopg2==2.8.2
 * pytz==2019.1
@@ -31,10 +29,10 @@ pip install django==1.11
 
 * Python
 * Django
-* HTML
-* CSS
+* HTML5
+* CSS3
 * Bootstrap 4
-* Postgresql
+* PostgreSQL
 
 ## Authors
 
