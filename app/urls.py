@@ -8,10 +8,10 @@ urlpatterns = [
     url(r'^index/$', views.index, name='index'),
     url(r'^profile/update/$', views.update_profile, name='update_profile'),
     url(r'^profile/(\d+)', views.profile, name='profile'),
-    url(r'^enroll/course/$', views.enroll_course, name='enroll_course'),
+    url(r'^courses/$', views.courses, name='courses'),
     url(r'^submit/assignment/$', views.submit_assignment, name="submit_assignment"),
     url(r'^signup/$', views.signup, name="signup"),
-    url(r'^pdf_view/(\d+)', views.pdf_view, name="pdf_view")
+    url(r'^pdf_view/(\d+)', views.pdf_view, name="pdf_view"),
 ]
 
 if settings.DEBUG:

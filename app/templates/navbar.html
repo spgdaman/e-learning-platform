@@ -5,6 +5,7 @@
             <div class="nav-item dropdown mx-0 px4">
                 {% if user.is_authenticated %}       
                     <a href="{% url 'submit_assignment' %}" style="color: white;">Submit Assignment</a>
+                    <a href="{% url 'courses' %}" style="color: white;">Add Course</a>
                     <img src="{{user.profile.profile_pic.url}}" alt="profile pic" style="border-radius: 50%; width 25px; height:25px;">
                     <a href="{% url 'profile' user.profile.id %}"  style="color: white;">My Profile</a>
                     <a href="{% url 'logout' %}" style="color: white;">Logout</a>

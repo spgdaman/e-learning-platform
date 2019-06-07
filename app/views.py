@@ -31,7 +31,7 @@ def profile(request,profile_id):
     profile = Profile.objects.filter(id=profile_id)
     return render(request,'profile.html',{"profile":profile})
 
-def enroll_course(request):
+def courses(request):
     user = request.user
     current_profile = Profile.objects.filter(id=user.id)
     if request.method == 'POST':
