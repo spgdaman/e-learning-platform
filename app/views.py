@@ -73,3 +73,7 @@ def signup(request):
 def pdf_view(request,id):
     pdf = Assignment.objects.filter(id=id)
     return render(request, 'pdf/pdf_view.html', {"pdf":pdf})
+
+def all_courses(request):
+    courses = Course.objects.all()
+    return render(request,'allcourses.html',{"courses":courses})

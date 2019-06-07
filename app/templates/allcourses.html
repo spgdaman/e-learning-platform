@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for course in courses %}
+            <div class="col-sm-12 col-md-3">
+                <div class="card mx-1 my-3">
+                    <div class="card-header">
+                        <h5>{{course.course_name}}</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>{{course.course_description}}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
