@@ -31,7 +31,7 @@ class Assignment(models.Model):
     submitted_at = models.DateTimeField(auto_now_add=True)
     
     # Relationships and Foreign Keys
-    course = models.ManyToManyField('Course')
+    course = models.ForeignKey('Course', on_delete=models.CASCADE)
     profile = models.ForeignKey('Profile', on_delete=models.CASCADE)
 
     def __str__(self):

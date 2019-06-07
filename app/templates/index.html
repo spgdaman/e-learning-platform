@@ -23,6 +23,7 @@
                         <div class="card-body">
                             <p><strong>Link:</strong> {{assignment.link}}</p>
                             <p><strong>Submitted at:</strong> {{assignment.submitted_at}}</p>
+                            <p>{{assignment.course.course_name}}</p>
                             <div class="row">
                                 <a class="btn btn-primary mx-2" href="..{{assignment.assignment.url}}" download="{{assignment.name}}">Download</a>
                                 <a class="btn btn-primary" href="{% url 'pdf_view' assignment.id %}">View as PDF</a>
